@@ -1,4 +1,6 @@
-export const deletePost= async ()=>{
+import { Request, Response } from "express";
+
+export const deletePost= async (req:Request,res:Response)=>{
     try{
 
     }

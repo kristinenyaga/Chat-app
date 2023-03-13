@@ -1,8 +1,10 @@
-export const createComment=async ()=>{
+import { Request, Response } from "express";
+
+export const createComment=async (req:Request,res:Response)=>{
     try{
 
     }
     catch(e){
-        
+
     }
 }
