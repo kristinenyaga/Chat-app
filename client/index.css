@@ -1,0 +1,12 @@
+body{text-align: left;}
+legend{color: red;}
+label{width: 130px; display: inline-table;}
+input[type=text]{width: 300px;}
+input[type=password]{width: 300px;}
+select{width: 150px;}
+h1{text-align: center; color: brown;}
+fieldset{width: 500px;}
+form{display: inline-block;}
+p{text-emphasis: bold;}
+a{
+    text-decoration:underline; }
