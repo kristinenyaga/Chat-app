@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "client")));
 app.use("/auth",routerAuth)
 app.use("/post", routerPost)
+app.use("/like")
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client", "index.html"));
 
