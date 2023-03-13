@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kristinenyaga/Chat-app/issues"
   },
-  "homepage": "https://github.com/kristinenyaga/Chat-app#readme"
+  "homepage": "https://github.com/kristinenyaga/Chat-app#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
