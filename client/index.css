@@ -10,17 +10,19 @@
     border-radius: 20px;
     background: #e85f83;
     transform: rotate(45deg);
-    z-index: 1;
+    z-index: -1;
 }
 .wrapper{
-    position: relative;
-    top:0;
+    position: absolute;
+    border: 2px solid #000;
+    border-image: linear-gradient(45deg, #f00, #0f0, #ff0, #0ff);
+    right: 100;
     display: flex;
     width: 300px;
     height: 500px;
-    justify-content: center;
     align-items: center;
     left: 400px;
+    margin: 30 auto;
     
     
 }
