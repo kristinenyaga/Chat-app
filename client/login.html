@@ -3,10 +3,15 @@
 <head>
     <title> CHAT ME</title>
     <link rel="stylesheet" type="text/css" href="index.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
-    <div class="box"></div>
-    <div class="wrapper">
+    <div></div>
+    <i class="fa fa-envelope-open" aria-hidden="true"></i>
+    <div class="pink-box">
+    </div>
+    <div class="blue-box"></div>
+    <div class="wrapper ">
         <div class="head-section">
             <div id="sign-in" onclick="open_signin()">
                 SIGN IN
@@ -14,27 +19,30 @@
             <div id="sign-up" onclick="open_signup()">
                 SIGN UP
             </div>
-            <form method="post"  name="sign-in-form" action="/auth/login">
+            <div>
+                
+                <form method="post"  name="sign-in-form" action="/auth/login">
                 <div id="sign-in-els">
-                    <input class= "control" onclick= "e.preventDefault" type="text" name="sign-in-user" placeholder="USERNAME">
+                    <input class= "control" onclick= "e.preventDefault" type="text" name="sign-in-user" placeholder="Username">
                     <br/>
-                    <input class= "control" type="password" name="password" placeholder="PASSWORD">
+                    <input class= "control" type="password" name="password" placeholder="Password">
                     <br>
-                    <button  type="submit" class="submit-btn" value="Sign in">LOG IN</button>
+                    <button  type="submit" class="submit-btn" value="Sign in">Sign in</button>
                 </div>
             </form>
             <form method="post"  name="sign-up-form" action="/auth/signup">
                 <div id="sign-up-els">
-                    <input class= "control" type="email" name="email" placeholder="email">
+                    <input class= "control" type="email" name="email" placeholder="Email">
                     <br/>
-                    <input class= "control" type="text" name="sign-up-user" placeholder="create username">
-                    <input class= "control" type="password" name="create-pass" placeholder="create password">
-                    <input class= "control" type="password" name="confirm-pass" placeholder="confirm password">
+                    <input class= "control" type="text" name="sign-up-user" placeholder="Create username">
+                    <input class= "control" type="password" name="create-pass" placeholder="Create password">
+                    <input class= "control" type="password" name="confirm-pass" placeholder="Confirm password">
                     <br>
                     <button  type="submit" class="submit-btn" value="Sign up"> Register</button>
                 </div>
             </form>
         </div>
+    </div>
     </div>
     
    <script>
