@@ -1,11 +1,18 @@
+import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
 
-export const createPost= async (req:Request,response:Response)=>{
-try{
-    const post=null//TODO create the post in the db
-response.status(201).json(post)
-}
-catch(e:any){
- response.json(e.message)   
-}
-}
+const prisma = new PrismaClient();
+
+export const createPost = async (req: Request, res: Response) => {
+  try {
+    if (!req.body.caption) {
+      return res.status(411).json({ message: "Please provide a caption" });
+    }
+    const post = await prisma.post.create({
+      data: { caption: req.body.caption, userId: res.locals.requestUser.id },
+    });
+    res.status(201).json(post);
+  } catch (e: any) {
+    res.json(e.message);
+  }
+};

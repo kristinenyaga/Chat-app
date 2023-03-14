@@ -1,10 +1,30 @@
+import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
 
-export const deleteComment= async (req:Request,res:Response)=>{
-    try{
+const prisma = new PrismaClient();
 
+export const deleteComment = async (req: Request, res: Response) => {
+  try {
+    const commentId = parseInt(req.params.cid);
+    const comment = await prisma.comment.findUnique({
+      where: { id: commentId },
+      include: { post: true },
+    });
+    if (comment === null) {
+      return res
+        .status(404)
+        .json({ message: `The comment id:${commentId} doesn't exist` });
     }
-    catch(e){
-
+    if (
+      ![comment.userId, comment.post.userId].includes(res.locals.requestUser.id)
+    ) {
+      return res.status(403).json({
+        message: `You are not authorized to delete comment id:${commentId}`,
+      });
     }
-}
+    await prisma.comment.delete({ where: { id: comment.id } });
+    return res.json({ message: "Comment deleted successfully" });
+  } catch (e) {
+    res.status(500).json(e);
+  }
+};

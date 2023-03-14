@@ -1,11 +1,25 @@
+import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
 
-export const deleteLike= async (req:Request,res:Response)=>{
-  
-    try{
-//TODO delete a post with the specific id
+const prisma = new PrismaClient();
+
+export const deleteLike = async (req: Request, res: Response) => {
+  try {
+    const postId = parseInt(req.params.id);
+    const like = await prisma.like.findFirst({
+      where: {
+        postId: { equals: postId },
+        userId: { equals: res.locals.requestUser.id },
+      },
+    });
+    if (like === null) {
+      return res
+        .status(404)
+        .json({ message: `You haven't liked post id:${postId}` });
     }
-    catch(e:any){
-res.json(e.message)
-    }
-}
+    await prisma.like.delete({ where: { id: like.id } });
+    return res.json({ message: "Like deleted successfully" });
+  } catch (e: any) {
+    res.status(500).json(e);
+  }
+};
