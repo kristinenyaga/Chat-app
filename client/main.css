@@ -47,26 +47,6 @@ li {
 #__next {
   isolation: isolate;
 }
-:root {
-  --dark-bg: black;
-  --light-bg: white;
-  --link-color: blue;
-
-  --bg: var(--light-bg);
-}
-
-.dark {
-  --bg: var(--dark-bg);
-  --li-color: var(--link-color);
-}
-
-body {
-  background-color: var(--bg);
-}
-html {
-  background-color: var(--bg);
-}
-
 .container {
   display: flex;
   /* justify-content: space-between; */
@@ -80,11 +60,22 @@ html {
   justify-content: space-between;
   background-color: var(--bg);
 }
+:root {
+  --dark-bg: black;
+}
+.dark {
+  --bg: var(var(--dark-bg));
+}
+body {
+  background-color: var(--bg);
+}
 
 .nav_icons {
   display: flex;
   align-items: center;
   gap: 0.8em;
+  border: solid 1.5px gray;
+  /* gap:.5em; */
   border: solid 1.5px gray;
   border-top: none;
   border-bottom: none;
@@ -111,9 +102,10 @@ html {
   /* width: 40px;
   height: 30px;
   text-align: center; */
-  padding: 1rem;
+  padding: 0.5rem;
   align-self: center;
   justify-content: center;
+  line-height: -50%;
 }
 
 .right {
@@ -256,4 +248,44 @@ ul:active {
 }
 .form-control {
   background-color: var(--bg) !important;
+}
+
+.cart {
+  cursor: pointer;
+}
+.cart span:nth-child(2),
+.cart span:nth-child(4) {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: red;
+  color: #040404;
+  font-weight: bold;
+  border-radius: 100px;
+  padding: 0.1em 0.4em;
+  position: relative;
+  top: -18px;
+  left: -12px;
+}
+.dark {
+  background-color: #040404;
+}
+
+.cart {
+  cursor: pointer;
+}
+.cart span:nth-child(2),
+.cart span:nth-child(4) {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: red;
+  color: #040404;
+  font-weight: bold;
+  border-radius: 100px;
+  padding: 0.1em 0.4em;
+  position: relative;
+  top: -18px;
+  left: -12px;
+}
+.dark {
+  background-color: #040404;
 }
