@@ -1,72 +1,111 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 * {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-html, body {
+html,
+body {
   height: 100%;
+  background-color: var(--bg) !important;
 }
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
   margin: 0 !important;
 }
-li{
+li {
   list-style: none;
 }
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
-.container{
-  display: flex;
-  justify-content: space-between;
-}
-.navbar_css{
-  display: flex;
-  justify-content: space-between;
+:root {
+  --dark-bg: black;
+  --light-bg: white;
+  --link-color: blue;
 
+  --bg: var(--light-bg);
 }
 
-.nav_icons{
+.dark {
+  --bg: var(--dark-bg);
+  --li-color: var(--link-color);
+}
+
+body {
+  background-color: var(--bg);
+}
+html {
+  background-color: var(--bg);
+}
+
+.container {
+  display: flex;
+  /* justify-content: space-between; */
+  background-color: var(--bg);
+}
+.parent_container {
+  background-color: var(--bg);
+}
+.navbar_css {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg);
+}
+
+.nav_icons {
   display: flex;
   align-items: center;
-  gap:.8em;
-  border:solid 1.5px gray;
+  gap: 0.8em;
+  border: solid 1.5px gray;
   border-top: none;
   border-bottom: none;
-  
 }
-.nav_icons_color{
+.nav_icons_color {
   color: rgb(228, 144, 91);
   font-size: 1.8em;
-
 }
 
-.list_icon{
+.list_icon {
   background-color: red;
   border-radius: 100px;
   padding: 15%;
   width: 5px;
   height: 5px;
-
 }
-.card_image{
+.card_image {
   width: 100%;
   height: 50vh;
 }
-.card_avatar{
+.card_avatar {
   background-color: red;
   border-radius: 100%;
   /* width: 40px;
@@ -77,60 +116,58 @@ li{
   justify-content: center;
 }
 
-.right{
-  background-color: #fdfbfb;
-  position: fixed;
-  top:20;
-  left:0;
+.right {
+  background-color: var(--bg);
+  /* position: fixed; */
+  top: 20;
+  left: 0;
   height: 100%;
   width: 270px;
-  
 }
 
-.image-text{
+.image-text {
   display: flex;
   align-items: center;
   flex-direction: row;
   margin-top: 10px;
-
 }
 
-.image-text .text{
+.image-text .text {
   font-size: 16px;
   font-weight: 500;
 }
 
-.sidebar_logo{
+.sidebar_logo {
   font-size: 30px;
 }
-.header-text{
+.header-text {
   display: flex;
   flex-direction: column;
 }
-.header-text .name{
+.header-text .name {
   font-weight: 600;
   font-size: 23px;
   margin: 0;
 }
-.header-text .profession{
+.header-text .profession {
   font-size: 18px;
   font-weight: 500;
 }
 
-.list_item li{
+.list_item li {
   color: #707070;
 }
-.list_item:hover{
+.list_item:hover {
   background-color: rgb(204, 203, 203);
   border-radius: 10px;
 }
 
-.sidebar{
+.sidebar {
   flex: 3;
   padding-bottom: 30px;
   width: 100%;
   margin: 20px;
-  background-color: #fdfbfb;
+  background-color: var(--bg);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -139,31 +176,29 @@ li{
   margin-top: 8em;
 }
 
-
-.sidebarItem{
+.sidebarItem {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.sidebarTitle{
+.sidebarTitle {
   margin: 10px;
   padding: 5px;
   width: 80%;
- 
+
   color: #222;
   line-height: 20px;
   text-align: center;
   font-weight: 600;
 }
 
-
-.sidebarList{
+.sidebarList {
   list-style: none;
   margin-bottom: 30px;
 }
 
-.sidebarListItem{
+.sidebarListItem {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
@@ -171,47 +206,54 @@ li{
   cursor: pointer;
 }
 
-.sidebarListItem :hover{
+.sidebarListItem :hover {
   color: red;
 }
-.namesUl{
+.namesUl {
   list-style: none;
 }
 
-.namesUl{
+.namesUl {
   color: #a7a4a4;
-  font-family: 'Nerko One', cursive;
-
+  font-family: "Nerko One", cursive;
 }
-.font-beutify{
+.font-beutify {
   color: #707070;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-.myBtn{
+.myBtn {
   width: 80px;
 }
-ul:active{
+ul:active {
   color: #222;
 }
-.middle{
+.middle {
   margin-top: 8em;
 }
-.card-icons button{
+.card-icons button {
   border-radius: 100vw;
   border: none;
-
 }
-.card-icons i{
+.card-icons i {
   font-size: 23px;
   color: rgb(228, 144, 91);
-  
 }
 
-.add_post_btn{
+.add_post_btn {
   padding: 10% 15%;
   border-radius: 100%;
   border: none;
-  background-color:rgb(228, 144, 91);
+  background-color: rgb(228, 144, 91);
+}
+.middle,
+.card {
+  background-color: var(--bg) !important;
+}
 
+.sidebarItem li {
+  color: var(--li-color);
+}
+.form-control {
+  background-color: var(--bg) !important;
 }
