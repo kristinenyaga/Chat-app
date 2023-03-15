@@ -7,60 +7,60 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
     <div></div>
-    <i class="fa fa-envelope-open" aria-hidden="true"></i>
+    <i class="fa fa-sign-in" aria-hidden="true"></i>
     <div class="pink-box">
     </div>
     <div class="blue-box"></div>
     <div class="wrapper ">
-        <div class="head-section">
-            <div id="sign-in" onclick="open_signin()">
+        <div id="head-section">
+            <div id="sign-in" >
                 SIGN IN
             </div>  
-            <div id="sign-up" onclick="open_signup()">
+            <div id="sign-up" >
                 SIGN UP
             </div>
             <div>
-                
-                <form method="post"  name="sign-in-form" action="/auth/login">
                 <div id="sign-in-els">
-                    <input class= "control" onclick= "e.preventDefault" type="text" name="sign-in-user" placeholder="Username">
-                    <br/>
-                    <input class= "control" type="password" name="password" placeholder="Password">
-                    <br>
-                    <button  type="submit" class="submit-btn" value="Sign in">Sign in</button>
+                    <form method="post"  name="sign-in-form" action="/auth/login">
+                        <input class= "control" onclick= "e.preventDefault" type="text" name="sign-in-user" placeholder="Username">
+                        <br/>
+                        <input class= "control" type="password" name="password" placeholder="Password">
+                        <br>
+                        <button  type="submit" class="submit-btn" value="Sign in">Sign in</button>
+                        <br/>
+                        <div class="forgot-pass-a">
+                            <a  href="#forgot-pass-div" id="forgot-pass-id">Forgot password?</a>
+                        </div>
+                    </form>
                 </div>
-            </form>
-            <form method="post"  name="sign-up-form" action="/auth/signup">
                 <div id="sign-up-els">
-                    <input class= "control" type="email" name="email" placeholder="Email">
-                    <br/>
-                    <input class= "control" type="text" name="sign-up-user" placeholder="Create username">
-                    <input class= "control" type="password" name="create-pass" placeholder="Create password">
-                    <input class= "control" type="password" name="confirm-pass" placeholder="Confirm password">
-                    <br>
-                    <button  type="submit" class="submit-btn" value="Sign up"> Register</button>
+                    <form method="post"  name="sign-up-form" action="/auth/signup">
+                            <input class= "control" type="email" name="email" placeholder="Email">
+                            <br/>
+                            <input class= "control" type="text" name="sign-up-user" placeholder="Create username">
+                            <input class= "control" type="password" name="create-pass" placeholder="Create password">
+                            <input class= "control" type="password" name="confirm-pass" placeholder="Confirm password">
+                            <br>
+                            <button  type="submit" class="submit-btn" value="Sign up"> Register</button>
+                    </div>
                 </div>
             </form>
         </div>
-    </div>
+        <div id="forgot-pass-div">
+            <form method="post"  name="forgot-pass-form" action="/auth/forgot-pass">
+                <label for="forgot-pass-email">Enter your email</label>
+                <input class= "control" type="email" name="forgot-pass-email" placeholder="Email">
+                <br/>
+                <button  type="submit" id="forget-btn-id" class="submit-btn" value="submit">Submit</button>
+            </form>
+        </div>
     </div>
     
    <script>
-//     var  string=sign in
-//    document.getElementsById ("sign-in").innerHTML=string;
-
-//    document.getElementsById ("sign-in").addEventListener('cclick',function()
-   
-//    {
-//     alert("javaaa");
-//    });
     var control_elements = document.querySelectorAll(".control");
-    // document.getElementsByClassName("control")[0].addEventListener("keydown" , (e)=>{
-    //     if(e.key==='Enter'){
-    //         e.preventDefault()
-    //     }
-
-    // });
+    const sign_in = document.getElementById("sign-in");
+    const sign_up = document.getElementById("sign-up");
+    // const forgot_pass_id = document.getElementsById("forgot-pass-id");
     for(let i =0;i<control_elements.length && control_elements[i] != "password";i++){
         control_elements[i].addEventListener("keydown" , (e)=>{
         if(e.key==='Enter'){
@@ -70,16 +70,38 @@
         });
 
     }
-    document.getElementById("signup").addEventListener("click",open_signup)
+    document.getElementById("sign-up").addEventListener("click",open_signup);
     function open_signup(){
         document.getElementById("sign-in-els").style.display='none';
         document.getElementById("sign-up-els").style.display='block';
+        sign_in.style.fontWeight="normal";
+        sign_up.style.fontWeight="bold";
 
     }
+    document.getElementById("sign-in").addEventListener("click",open_signin);
     function open_signin(){
+        sign_in.style.fontWeight="bold";
+        sign_up.style.fontWeight="normal";
         document.getElementById("sign-in-els").style.display='block';
         document.getElementById("sign-up-els").style.display='none';
     }
+    document.getElementById('forgot-pass-id').addEventListener('click',open_forgot_pass );
+    function open_forgot_pass(){
+        document.getElementById("head-section").style.display='none';
+        document.getElementById("forgot-pass-div").style.display='block';
+        document.getElementById("sign-in-els").style.display='none';
+        document.getElementById("sign-up-els").style.display='none';
+        // document.getElementsById('forgot-pass-dddk').style.display = "block";
+        // document.getElementsByClassName('head-section').style.display = "none";
+        // alert("hey");
+    };
+    document.getElementById("forget-btn-id").addEventListener("click",(e)=>{
+        alert("eas");
+        document.getElementById("sign-in-els").style.display='block';
+
+    });
+    
+
 </script>
       
          

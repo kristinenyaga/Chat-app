@@ -4,14 +4,20 @@
         45deg,
         #845ec2,
         #d65db1,
-        #ff6f91
+        #ff6f91,
+        blue
     );
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
+    font-family: 'Roboto';
+    font-size: medium;
+    
 }
 
-/* .pink-box{
+.pink-box{
     
     float: left;
     position:fixed;
@@ -21,7 +27,7 @@
     left: 10%;
     border-radius: 20px;
     background: #e85f83;
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
     z-index: -1;
     transition: transform 5s ;
 }
@@ -37,25 +43,33 @@
     transform: rotate(-45deg);
     transition: transform 5s ease-in-out;
     z-index: -2;
-} */
+}
 .wrapper{
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
     position: fixed;
-    padding: 20;
-    right: 100px;
-    top: 25%;
+    padding: 20px;
+    right: 5%;
+    top: 15%;
     display: flex;
-    width: 300px;
-    height: 500px;
+    width: 30%;
+    height:74%;
     
     margin: 30 auto;    
+    align-items:  top;
+    justify-content: center;
+    border-radius: 30px;
+
     
 }
-body{position: absolute;
-    text-align: center;z-index: 99;
-
+body{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #ffffff, #ff0000 25%, #ffff00 50%, #00ff00 75%, #0000ff);
 }
 input{
-    width: 300px; 
+    width: 300px;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -65,18 +79,23 @@ input{
     float: left;
     cursor:pointer;
     color:#e85f83;
-    
+    font-weight: bold;
 }
 #sign-up{
-    float: right;
+    float: clear;
     cursor:pointer;
     color: #e85f83;
 }
 .control {
     padding-top: 20px;
     padding-bottom: 20px;
-
-
+    background-color: transparent;
+}
+#head-section{
+    padding: 40px;
+}
+#forgot-pass-div{
+    display: none;
 }
 .control:focus{
     border: solid transparent;
@@ -89,6 +108,8 @@ input{
     border-width: 0 0 2px 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    transition: border-width 2s cubic-bezier(0.42, 0, 0.58, 1);
+
 }
 /* .input:focus{
     border-top: none;
@@ -107,4 +128,14 @@ input{
 }
 #sign-up-els {
     display: none;
+    transition:  2s ease-in-out;
+}
+#sign-in-els {
+    display: block;
+    transition:  2s ease-in-out;
+    rotate: (180deg);
+}
+.forgot-pass-a{
+    margin-top: 50px;
+    
 }
