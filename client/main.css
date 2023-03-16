@@ -73,16 +73,16 @@ body {
   background-color: var(--bg);
 }
 
-.nav_icons {
+.navbar_nav {
   display: flex;
+  gap: 1rem;
+  padding: 0;
   align-items: center;
-  gap: 0.8em;
-  border: solid 1.5px gray;
-  /* gap:.5em; */
-  border: solid 1.5px gray;
-  border-top: none;
-  border-bottom: none;
+  margin-bottom: 0;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
+
 .nav_icons_color {
   color: #1d6766;
   font-size: 1.8em;
@@ -115,6 +115,13 @@ body {
   left: 0;
   height: 100%;
   width: 270px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .right {
+    text-align: left;
+  }
 }
 
 .image-text {
@@ -222,10 +229,18 @@ ul:active {
   color: #222;
 }
 .middle {
-  margin-top: 8em;
+  margin-top: 1rem;
 }
+
+@media (min-width: 768px) {
+  .middle {
+    margin-top: 8rem;
+  }
+}
+
 .card-icons button {
   border-radius: 100vw;
+  background: transparent;
   border: none;
   padding: none;
 }
@@ -297,4 +312,20 @@ a,
 li,
 p {
   color: var(--text-link-color) !important;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 1rem;
+  width: 100%;
+  max-width: 62rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+  }
 }
