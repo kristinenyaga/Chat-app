@@ -52,7 +52,7 @@
     left: 10%;
     border-radius: 20px;
     background:#babebd;
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
     transition: transform 5s ease-in-out;
     z-index: -2;
 }
