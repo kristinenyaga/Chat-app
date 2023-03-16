@@ -20,7 +20,7 @@ export const createLike = async (req: Request, res: Response) => {
     if (e.code === "P2002") {
       return res
         .status(208)
-        .json({ message: `You have already like post id:${req.params.id}` });
+        .json({ message: `You have already liked post id:${req.params.id}` });
     }
     res.status(500).json(e);
   }

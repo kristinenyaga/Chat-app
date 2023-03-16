@@ -42,8 +42,8 @@ postButton.addEventListener("click", () => {
 
   // }
 });
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.location();
-  }, 2000);
-});
+
+setTimeout(function () {
+  console.log("hey");
+  // window.location.href = "profile.html";
+}, 1000);
