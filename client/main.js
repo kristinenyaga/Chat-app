@@ -43,7 +43,7 @@ postButton.addEventListener("click", () => {
   // }
 });
 
-})
+
 
 setTimeout(function() {
   console.log("hey")
