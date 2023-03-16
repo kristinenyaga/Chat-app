@@ -1,3 +1,7 @@
+const toggleTheme = document.getElementById("toggle-theme");
+toggleTheme.addEventListener("click", (e) => {
+  document.body.classList.toggle("dark");
+});
 const fileInput = document.getElementById("fileInput");
 const profilePhoto = document.getElementById("profilePhoto");
 fileInput?.addEventListener("change", (e) => {
