@@ -16,7 +16,7 @@
 .settingsTitleUpdate {
   font-size: 30px;
   margin-bottom: 20px;
-  color:#e4905b ;
+  color:#1d6766 ;
 }
 
 
@@ -51,7 +51,7 @@
   border-radius: 50%;
   margin-left: 10px;
   color: white;
-  background-color: rgb(228, 144, 91);;
+  background-color: #1d6766;
   cursor: pointer;
 }
 
@@ -92,7 +92,7 @@
   border: none;
   border-radius: 10px;
   color: rgb(13, 12, 12);
-  background-color: rgb(228, 144, 91);
+  background-color: #1d6766;
   padding: 10px;
   margin-top: 20px;
   cursor: pointer;
@@ -103,7 +103,7 @@
 }
 
 .settingsSubmitButton:hover {
-  background-color:rgb(228, 144, 91);
+  background-color:#1d6766;
   
 
 }
@@ -123,7 +123,7 @@
   
 }
 .nav_icons_color{
-  color: rgb(228, 144, 91);
+  color: #1d6766;
   font-size: 1.8em;
 
 }
@@ -141,7 +141,8 @@
   height: 50vh;
 }
 .card_avatar{
-  background-color: red;
+  color: #1d6766;
+  background-color: #babebd;
   border-radius: 100%;
   /* width: 40px;
   height: 30px;
@@ -196,7 +197,7 @@ ul:active{
 }
 .card-icons i{
   font-size: 23px;
-  color: rgb(228, 144, 91);
+  color: #1d6766;
   
 }
 
@@ -204,7 +205,7 @@ ul:active{
   padding: 10% 15%;
   border-radius: 100%;
   border: none;
-  background-color:rgb(228, 144, 91);
+  background-color:#1d6766;
 
 }
 

@@ -7,10 +7,7 @@
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-/* #1d6766,
-green,
-#babebd,
-#8e9997 */
+
 html,
 body {
   height: 100%;
@@ -108,6 +105,7 @@ body {
   height: 50vh;
 }
 .card_avatar {
+  color: #1d6766;
   background-color: #babebd;
   border-radius: 100%;
   padding: 0.5rem;
