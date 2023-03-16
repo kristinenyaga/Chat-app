@@ -1,7 +1,15 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
 :root {
     --gradient: linear-gradient(
+<<<<<<< HEAD
         45deg,
+=======
+        to right,
+        /* #845ec2,
+        #d65db1,
+        #ff6f91,
+        blue */
+>>>>>>> 67244e6110c8dc0894065d811eb5b9546fc86271
         #1d6766,
         green,
         #babebd,
@@ -23,7 +31,11 @@
     transform: rotate(45deg);
     margin-top: 140px;
     
-  
+  @keyframes change-box-color {
+    from{background: #1d6766;}
+    to{background: #114389;}
+}
+
 }
 .green-box{
     
@@ -38,6 +50,8 @@
     transform: rotate(-45deg);
     z-index: -1;
     transition: transform 5s ;
+    animation-name: change-box-color;
+    animation-duration: 10s;
 }
 .gray-box{
     float: left;
@@ -108,14 +122,14 @@ input{
     border: solid transparent;
     border-radius: 5px;
     outline: none;
-    border-image: var(--gradient);
-    border-image-slice: 1;
     background-origin: border-box;
     background-clip: padding-box,border-box;
     border-width: 0 0 2px 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     transition: border-width 2s cubic-bezier(0.42, 0, 0.58, 1);
+    border-image: var(--gradient);
+    border-image-slice: 1;
 
 }
 /* .input:focus{
