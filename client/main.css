@@ -7,7 +7,10 @@
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-
+/* #1d6766,
+green,
+#babebd,
+#8e9997 */
 html,
 body {
   height: 100%;
@@ -51,6 +54,8 @@ li {
 :root {
   --dark-bg: black;
   --light-bg: white;
+
+  --bg: var(--light-bg);
 }
 .dark {
   --bg: var(--dark-bg);
@@ -69,13 +74,12 @@ body {
 .parent_container {
   background-color: var(--bg);
 }
-.navbar_css {
+#navbar {
   display: flex;
   justify-content: space-between;
-  background-color: white;
 }
-.navbar_css {
-  background-color: var(--bg) !important;
+#navbar {
+  background-color: var(--bg);
 }
 
 .nav_icons {
@@ -237,7 +241,7 @@ ul:active {
 }
 .card-icons i {
   font-size: 23px;
-  color:#1d6766 ;
+  color: #1d6766;
 }
 
 .add_post_btn {
