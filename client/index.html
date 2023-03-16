@@ -119,9 +119,14 @@
               data-bs-toggle="modal"
               class="add_post_btn"
               data-bs-target="#staticBackdrop"
+              id="post-btn"
+              
             >
-              <i class="fa-solid fa-plus"></i>
-            </button>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div id="post-btn-background">
+              post
+          </div>
           </div>
         </ul>
       </div>
@@ -189,13 +194,14 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <form class="mt-3 mb-3">
+                      <form class="mt-3 mb-3" id="myForm">
                         <div class="mb-3">
                           <input
                             type="text"
                             placeholder="type a comment"
                             class="form-control"
                             aria-describedby="emailHelp"
+                            name="titleInput"
                           />
                         </div>
                         <button type="submit" class="btn btn-primary">
@@ -227,7 +233,7 @@
                           aria-label="Submit"
                         ></button>
                       </div>
-                      <form class="mt-3">
+                      <form class="mt-3" onsubmit="submitForm(event)">
                         <div class="mb-3">
                           <input
                             type="text"
@@ -242,15 +248,15 @@
                             type="text"
                             placeholder="title of post"
                             class="form-control p-2"
+                            id="input_title"
                             aria-describedby="emailHelp"
                           />
                         </div>
                         <div class="mb-3">
                           <textarea
-                            id=""
-                            name="write post"
                             rows="4"
                             class="form-control"
+                            id="description_input"
                           >
                           </textarea>
                         </div>
@@ -333,6 +339,6 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
     ></script>
-    <script type="text/javascript" href="../client/index.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
   </body>
 </html>

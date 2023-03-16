@@ -1,6 +1,5 @@
 const fileInput = document.getElementById("fileInput");
 const profilePhoto = document.getElementById("profilePhoto");
-console.log(fileInput);
 fileInput?.addEventListener("change", (e) => {
   console.log("Files", fileInput.files);
   if (fileInput.files.length) {
@@ -9,3 +8,39 @@ fileInput?.addEventListener("change", (e) => {
     profilePhoto.src = "./images/profile.png";
   }
 });
+
+// const myForm=document.getElementById('myForm')
+// myForm.addEventListener("submit",(e)=>{
+//   e.preventDefault()
+//   console.log("submitted")
+// })
+
+function submitForm(event) {
+  event.preventDefault();
+  const titleInput = event.target.elements.input_title.value
+  const description = document.querySelector('#description_input')
+  
+  console.log(description.value.trim());
+}
+const postButton=document.getElementById('post-btn')
+postButton.addEventListener("click", ()=>{
+  const togglePostBtn=document.getElementById("post-btn-background")
+  togglePostBtn.style.display = "block";
+  setTimeout(() => {
+      togglePostBtn.style.display = "none";
+  }, 2000);
+  // const togglePostBtn=document.getElementById("post-btn-background")
+  // if(togglePostBtn.style.display === "none"){
+  //   togglePostBtn.style.display = "block";
+  // }
+  // else{
+  //   togglePostBtn.style.display = "none";
+
+  // }
+
+})
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    console.log("hey")
+  },2000)
+})
