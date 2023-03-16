@@ -21,17 +21,17 @@ fileInput?.addEventListener("change", (e) => {
 
 function submitForm(event) {
   event.preventDefault();
-  const titleInput = event.target.elements.input_title.value
-  const description = document.querySelector('#description_input')
-  
+  const titleInput = event.target.elements.input_title.value;
+  const description = document.querySelector("#description_input");
+
   console.log(description.value.trim());
 }
-const postButton=document.getElementById('post-btn')
-postButton.addEventListener("click", ()=>{
-  const togglePostBtn=document.getElementById("post-btn-background")
+const postButton = document.getElementById("post_btn");
+postButton.addEventListener("click", () => {
+  const togglePostBtn = document.getElementById("post-btn-background");
   togglePostBtn.style.display = "block";
   setTimeout(() => {
-      togglePostBtn.style.display = "none";
+    togglePostBtn.style.display = "none";
   }, 2000);
   // const togglePostBtn=document.getElementById("post-btn-background")
   // if(togglePostBtn.style.display === "none"){
@@ -41,11 +41,9 @@ postButton.addEventListener("click", ()=>{
   //   togglePostBtn.style.display = "none";
 
   // }
-
-})
-window.addEventListener('load',()=>{
-  setTimeout(()=>{
-
-    document.location()
-  },2000)
-})
+});
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.location();
+  }, 2000);
+});
