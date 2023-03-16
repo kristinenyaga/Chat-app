@@ -47,6 +47,19 @@ li {
 #__next {
   isolation: isolate;
 }
+:root {
+  --dark-bg: black;
+  --light-bg: white;
+}
+.dark {
+  --bg: var(--dark-bg);
+  --text-link-color: rgb(252, 252, 252);
+  --hover: rgb(32, 32, 54);
+  --avatar: white;
+}
+body {
+  background-color: var(--bg);
+}
 .container {
   display: flex;
   /* justify-content: space-between; */
@@ -58,16 +71,10 @@ li {
 .navbar_css {
   display: flex;
   justify-content: space-between;
-  background-color: var(--bg);
+  background-color: white;
 }
-:root {
-  --dark-bg: black;
-}
-.dark {
-  --bg: var(var(--dark-bg));
-}
-body {
-  background-color: var(--bg);
+.navbar_css {
+  background-color: var(--bg) !important;
 }
 
 .nav_icons {
@@ -99,9 +106,6 @@ body {
 .card_avatar {
   background-color: red;
   border-radius: 100%;
-  /* width: 40px;
-  height: 30px;
-  text-align: center; */
   padding: 0.5rem;
   align-self: center;
   justify-content: center;
@@ -152,6 +156,7 @@ body {
 .list_item:hover {
   background-color: rgb(204, 203, 203);
   border-radius: 10px;
+  background-color: var(--hover);
 }
 
 .sidebar {
@@ -226,6 +231,7 @@ ul:active {
 .card-icons button {
   border-radius: 100vw;
   border: none;
+  padding: none;
 }
 .card-icons i {
   font-size: 23px;
@@ -243,9 +249,6 @@ ul:active {
   background-color: var(--bg) !important;
 }
 
-.sidebarItem li {
-  color: var(--li-color);
-}
 .form-control {
   background-color: var(--bg) !important;
 }
@@ -267,7 +270,7 @@ ul:active {
   left: -12px;
 }
 .dark {
-  background-color: #040404;
+  background-color: black;
 }
 
 .cart {
@@ -286,6 +289,16 @@ ul:active {
   top: -18px;
   left: -12px;
 }
-.dark {
-  background-color: #040404;
+
+.right {
+  margin-top: 5rem;
+}
+
+span,
+h1,
+h5,
+a,
+li,
+p {
+  color: var(--text-link-color) !important;
 }
