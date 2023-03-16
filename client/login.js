@@ -71,8 +71,8 @@ document.getElementById("signupButton").addEventListener("click", async () => {
     });
 });
 
-const loginEmail=document.getElementById("loginEmail")
-const loginPassword=document.getElementById("loginPassword")
+const loginEmail=document.getElementById("loginEmail").value
+const loginPassword=document.getElementById("loginPassword").value
 
 
 document.getElementById("loginButton").addEventListener("click",async (e)=>{
