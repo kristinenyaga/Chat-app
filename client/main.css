@@ -136,6 +136,13 @@ body {
   align-items: center;
   flex-direction: row;
   margin-top: 10px;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .image-text {
+    justify-content: start;
+  }
 }
 
 .image-text .text {
@@ -257,11 +264,29 @@ ul:active {
 }
 
 .add_post_btn {
-  padding: 10% 15%;
+  /* padding: 1% 4.5%; */
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 100%;
   border: none;
   background-color: #1d6766;
+  color: white;
+  font-size: 2rem;
 }
+
+@media (max-width: 767px) {
+  .add_post_btn {
+    position: fixed;
+    bottom: 1rem;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .middle,
 .card {
   background-color: var(--bg) !important;
@@ -337,29 +362,29 @@ p {
   }
 }
 
-#post-btn i:hover{
-  
+#post-btn i:hover {
   transform: rotate(45deg);
   color: #fff;
   animation-name: rotate;
   transition: all 5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-#post-btn-background{
+#post-btn-background {
   padding: 10% 15%;
   /* background-color:rgb(228, 144, 91);  */
   border: solid 3px;
   display: block;
   color: #fff;
   border-radius: 50px !important ;
-  border: 2px solid transparent; 
-  background: linear-gradient(45deg,rgb(230, 110, 6),rgb(228, 144, 91)) border-box; 
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, rgb(230, 110, 6), rgb(228, 144, 91))
+    border-box;
   /* border-image: linear-gradient(60deg,red,blue) 20 border-box; */
-/* 
+  /* 
   -webkit-mask: 
      linear-gradient(rgb(213, 210, 210) 0 0) padding-box, 
      linear-gradient(rgb(23, 23, 23) 0 0);
   -webkit-mask-composite: xor; 
           mask-composite: exclude; 
            */
- display: none;
+  display: none;
 }
