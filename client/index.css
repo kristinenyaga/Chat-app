@@ -2,10 +2,6 @@
 :root {
     --gradient: linear-gradient(
         45deg,
-        /* #845ec2,
-        #d65db1,
-        #ff6f91,
-        blue */
         #1d6766,
         green,
         #babebd,
@@ -29,7 +25,7 @@
     
   
 }
-.pink-box{
+.green-box{
     
     float: left;
     position:fixed;
@@ -43,7 +39,7 @@
     z-index: -1;
     transition: transform 5s ;
 }
-.blue-box{
+.gray-box{
     float: left;
     position:fixed;
     width:300px;
@@ -149,4 +145,38 @@ input{
 .forgot-pass-a{
     margin-top: 50px;
     
+}
+@media (max-width: 50em)  {
+   
+    #logo{
+        margin-top: 27px;
+        margin-left: 15px;
+ 
+    }
+    .green-box{
+        width:160px;
+        height: 160px;
+        top:5%;
+        left: 30%;
+
+    }
+    .gray-box{
+        width:160px;
+        height: 160px;
+        top:12%;
+        left: 30%;
+    }
+    .wrapper{
+    padding: 40px;
+    right: 7.5%;
+    top: 40%;
+    display: flex;
+    width: 87%;
+    height:55%;
+    margin: 30 auto;    
+    align-items:  top;
+    justify-content: center;
+    border-radius: 30px;
+    }
+
 }
