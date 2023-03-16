@@ -84,12 +84,12 @@ body {
   border-bottom: none;
 }
 .nav_icons_color {
-  color: rgb(228, 144, 91);
+  color: #1d6766;
   font-size: 1.8em;
 }
 
 .list_icon {
-  background-color: red;
+  background-color: #babebd;
   border-radius: 100px;
   padding: 15%;
   width: 5px;
@@ -100,7 +100,7 @@ body {
   height: 50vh;
 }
 .card_avatar {
-  background-color: red;
+  background-color: #babebd;
   border-radius: 100%;
   padding: 0.5rem;
   align-self: center;
@@ -231,14 +231,14 @@ ul:active {
 }
 .card-icons i {
   font-size: 23px;
-  color: rgb(228, 144, 91);
+  color: #1d6766;
 }
 
 .add_post_btn {
   padding: 10% 15%;
   border-radius: 100%;
   border: none;
-  background-color: rgb(228, 144, 91);
+  background-color: #1d6766;
 }
 .middle,
 .card {
@@ -256,7 +256,7 @@ ul:active {
 .cart span:nth-child(4) {
   font-size: 15px;
   font-weight: bold;
-  background-color: red;
+  background-color: #babebd;
   color: #040404;
   font-weight: bold;
   border-radius: 100px;
@@ -276,7 +276,7 @@ ul:active {
 .cart span:nth-child(4) {
   font-size: 15px;
   font-weight: bold;
-  background-color: red;
+  background-color: #babebd;
   color: #040404;
   font-weight: bold;
   border-radius: 100px;
