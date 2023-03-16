@@ -7,11 +7,6 @@
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-html,
-body {
-  height: 100%;
-  background-color: var(--bg) !important;
-}
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -50,6 +45,8 @@ li {
 :root {
   --dark-bg: black;
   --light-bg: white;
+
+  --bg: var(--light-bg);
 }
 .dark {
   --bg: var(--dark-bg);
@@ -68,13 +65,12 @@ body {
 .parent_container {
   background-color: var(--bg);
 }
-.navbar_css {
+#navbar {
   display: flex;
   justify-content: space-between;
-  background-color: white;
 }
-.navbar_css {
-  background-color: var(--bg) !important;
+#navbar {
+  background-color: var(--bg);
 }
 
 .nav_icons {
