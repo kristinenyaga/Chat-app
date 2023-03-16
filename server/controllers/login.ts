@@ -30,7 +30,7 @@ export const login = async (req: Request, res: Response) => {
       email: userExists.email,
       username: userExists.username,
       picture: userExists.picture,
-      token: token,
+      token: token
     };
     return res.json(user);
   } catch (e: any) {

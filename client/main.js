@@ -46,5 +46,5 @@ postButton.addEventListener("click", ()=>{
 
 setTimeout(function() {
   console.log("hey")
-  // window.location.href = "profile.html";
+  window.location.href = "login.html";
 }, 1000);

@@ -6,15 +6,21 @@ import jwt from "jsonwebtoken";
 import path from "path";
 import { routerAuth } from "./routes/auth";
 import { routerPost } from "./routes/post";
-
+import mime from "mime"
 const prisma = new PrismaClient();
 
 dotenv.config();
 const app = express();
+const mimeTypes = {
+  css: 'text/css',
+  js: 'text/javascript'
+};
+
+// // Add the static middleware with the mimeTypes option
+
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "client")));
 
 async function jwtVerify(req: Request, res: Response, next: NextFunction) {
   let payload: any;
@@ -38,12 +44,14 @@ app.use("/posts", jwtVerify);
 
 app.use("/auth", routerAuth);
 app.use("/posts", routerPost);
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client", "index.html"));
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client", "index.html"));
 
-  console.log(`hey got called`);
-});
-const PORT = process.env.PORT || 8800;
+//   console.log(`hey got called`);
+// });
+app.use(express.static(path.join(__dirname, '..',"client")));
+
+const PORT = process.env.PORT || 8801;
 app.listen(PORT, () => {
   console.log(`app listening on http://localhost:${PORT}`);
 });

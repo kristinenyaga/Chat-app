@@ -36,6 +36,6 @@ export const signup = async (req: Request, res: Response) => {
     user.token = jwt.sign({ id: user.id, email: user.email }, "sco207");
     res.json(user);
   } catch (e: any) {
-    res.status(500).json(e);
+    res.status(500).json(e.message);
   }
 };
