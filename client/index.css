@@ -1,11 +1,15 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
 :root {
     --gradient: linear-gradient(
+<<<<<<< HEAD
+        45deg,
+=======
         to right,
         /* #845ec2,
         #d65db1,
         #ff6f91,
         blue */
+>>>>>>> 67244e6110c8dc0894065d811eb5b9546fc86271
         #1d6766,
         green,
         #babebd,
@@ -33,7 +37,7 @@
 }
 
 }
-.pink-box{
+.green-box{
     
     float: left;
     position:fixed;
@@ -49,7 +53,7 @@
     animation-name: change-box-color;
     animation-duration: 10s;
 }
-.blue-box{
+.gray-box{
     float: left;
     position:fixed;
     width:300px;
@@ -155,4 +159,38 @@ input{
 .forgot-pass-a{
     margin-top: 50px;
     
+}
+@media (max-width: 50em)  {
+   
+    #logo{
+        margin-top: 27px;
+        margin-left: 15px;
+ 
+    }
+    .green-box{
+        width:160px;
+        height: 160px;
+        top:5%;
+        left: 30%;
+
+    }
+    .gray-box{
+        width:160px;
+        height: 160px;
+        top:12%;
+        left: 30%;
+    }
+    .wrapper{
+    padding: 40px;
+    right: 7.5%;
+    top: 40%;
+    display: flex;
+    width: 87%;
+    height:55%;
+    margin: 30 auto;    
+    align-items:  top;
+    justify-content: center;
+    border-radius: 30px;
+    }
+
 }
