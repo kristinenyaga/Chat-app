@@ -45,6 +45,7 @@ postButton.addEventListener("click", ()=>{
 })
 window.addEventListener('load',()=>{
   setTimeout(()=>{
-    console.log("hey")
+
+    document.location()
   },2000)
 })
