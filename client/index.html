@@ -39,7 +39,9 @@
       src="https://kit.fontawesome.com/216436853e.js"
       crossorigin="anonymous"
     ></script>
+
     <script type="text/javascript" defer src="./main.js"></script>
+    <script src="./globalState.js"></script>
     <title>TWICHER</title>
   </head>
   <body>
@@ -148,13 +150,14 @@
                   <form class="mt-3 mb-3" id="myForm">
                     <div class="mb-3">
                       <input
+                      id="comment-content"
                         type="text"
                         placeholder="type a comment"
                         class="form-control"
                         aria-describedby="emailHelp"
                       />
                     </div>
-                    <button type="submit" class="btn btn-primary">
+                    <button id="send-comment" type="submit" class="btn btn-primary">
                       Submit
                     </button>
                   </form>

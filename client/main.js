@@ -1,11 +1,16 @@
 // Get the query string from the URL
-const queryString = window.location.search;
+//window.addEventListener('load',()=>{
+ // if (!globalState.accessToken) {
+   // window.location.href = "login.html";
+  //}
+//})
+const username = localStorage.getItem('username');
+const token = localStorage.getItem('accessToken');
 
-// Create a new URLSearchParams object from the query string
-const params = new URLSearchParams(queryString);
+if(!token){
+    window.location.href='login.html'
+}
 
-// Get the value of the "user" parameter from the URL query string
-const username = params.get('user');
 document.getElementById('user-name').textContent=username
 // Log the value of the "user" parameter to the console
 console.log(username);
@@ -68,7 +73,7 @@ likePost.addEventListener("click", (e) => {
     likes.innerHTML = parseInt(likes.innerHTML) - 1;
   }
 });
-if(!username){
+if(!token){
 
 
   setTimeout(function () {
@@ -78,4 +83,20 @@ if(!username){
   }, 3000);
 };
 }
+const text=document.getElementById('post-comment').value
+document.getElementById('send-comment').addEventListener("click",async(e)=>{
+e.preventDefault()
+const post= await fetch("/posts/id/comments",
+{
+  method:'POST',
+  body:JSON.stringify({
+   text
+  }),
+  headers: {
+      "Content-type": "application/json",
+    }
+}
+)
+alert(`posted succesfully`)
 
+})
