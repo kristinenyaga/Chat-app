@@ -20,7 +20,8 @@ export const signup = async (req: Request, res: Response) => {
     });
 
     if (userExists !== null) {
-      return res.status(409).send("user already exists");
+      console.log(userExists);
+      return res.status(409).json("user already exists");
     }
     // create a user in the db from req.body
     const user: any = await prisma.user.create({

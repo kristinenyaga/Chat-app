@@ -13,6 +13,9 @@ export const getPosts = async (req: Request, res: Response) => {
           select: { userId: true },
           where: { userId: res.locals.requestUser.id },
         },
+        comments: {
+          select: { text: true, user: { select: { username: true } } },
+        },
         _count: { select: { likes: true, comments: true } },
       },
     });

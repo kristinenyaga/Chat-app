@@ -13,12 +13,10 @@ export const deleteLike = async (req: Request, res: Response) => {
       },
     });
     if (like === null) {
-      return res
-        .status(404)
-        .json({ message: `You haven't liked post id:${postId}` });
+      return res.status(404).json(`You haven't liked post id:${postId}`);
     }
     await prisma.like.delete({ where: { id: like.id } });
-    return res.json({ message: "Like deleted successfully" });
+    return res.json("Like deleted successfully");
   } catch (e: any) {
     res.status(500).json(e);
   }
