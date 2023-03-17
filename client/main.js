@@ -1,3 +1,15 @@
+// Get the query string from the URL
+const queryString = window.location.search;
+
+// Create a new URLSearchParams object from the query string
+const params = new URLSearchParams(queryString);
+
+// Get the value of the "user" parameter from the URL query string
+const username = params.get('user');
+document.getElementById('user-name').textContent=username
+// Log the value of the "user" parameter to the console
+console.log(username);
+
 const toggleTheme = document.getElementById("toggle-theme");
 toggleTheme.addEventListener("click", (e) => {
   document.body.classList.toggle("dark");
@@ -56,6 +68,8 @@ likePost.addEventListener("click", (e) => {
     likes.innerHTML = parseInt(likes.innerHTML) - 1;
   }
 });
+if(!username){
+
 
   setTimeout(function () {
     console.log("hey");
@@ -63,4 +77,5 @@ likePost.addEventListener("click", (e) => {
     window.location.href = "login.html";
   }, 3000);
 };
+}
 

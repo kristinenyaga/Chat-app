@@ -113,6 +113,8 @@ document.getElementById('signInForm').addEventListener("submit",async (e)=>{
     })
     .then((res) => res.json())
     .then((data) => {
-      window.location.href = "#index.html";
+  
+const{username}=data
+      window.location.href = `index.html?user=${username}`;
     });
 })
