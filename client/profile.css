@@ -1,0 +1,226 @@
+.settings {
+  display: flex;
+}
+
+.settingsWrapper {
+  flex: 9;
+  padding: 20px;
+}
+
+.settingsTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settingsTitleUpdate {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color:#1d6766 ;
+}
+
+
+.settingsForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.settingsPP {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.settingsPP > img {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.settingsPPIcon {
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  margin-left: 10px;
+  color: white;
+  background-color: #1d6766;
+  cursor: pointer;
+}
+
+.settingsPPButton:focus {
+  outline-style: none;
+}
+
+.settingsForm > label {
+  font-size: 20px;
+  margin-top: 20px;
+  color: rgb(92, 91, 90);
+  font-weight: 400;
+
+}
+
+.settingsPPInput {
+  width: 30%;
+}
+
+.settingsForm > input {
+  color: rgb(24, 22, 22);
+  margin-top: 5px;
+  margin-bottom: 10px;
+  height: 25px;
+  border: none;
+  border-bottom: 1.5px solid rgb(20, 19, 19);
+}
+.settingsForm > input:focus {
+  border: none;
+  border-bottom: 1.5px solid rgb(20, 19, 19);
+  outline: none;
+}
+
+
+.settingsSubmitButton {
+  align-self: center;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  color: rgb(13, 12, 12);
+  background-color: #1d6766;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+}
+
+.settingsSubmitButton:hover {
+  background-color:#1d6766;
+  
+
+}
+::placeholder{
+  color: rgb(17, 16, 16);
+  letter-spacing: 2px;
+}
+
+
+.nav_icons{
+  display: flex;
+  align-items: center;
+  /* gap:.5em; */
+  border:solid 1.5px gray;
+  border-top: none;
+  border-bottom: none;
+  
+}
+.nav_icons_color{
+  color: #1d6766;
+  font-size: 1.8em;
+
+}
+
+.list_icon{
+  background-color: red;
+  border-radius: 100px;
+  padding: 15%;
+  width: 5px;
+  height: 5px;
+
+}
+.card_image{
+  width: 100%;
+  height: 50vh;
+}
+.card_avatar{
+  color: #1d6766;
+  background-color: #babebd;
+  border-radius: 100%;
+  /* width: 40px;
+  height: 30px;
+  text-align: center; */
+  padding: .5rem;
+  align-self: center;
+  justify-content: center;
+  line-height: -50%;
+}
+
+
+.image-text{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10px;
+
+}
+
+.image-text .text{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.namesUl{
+  list-style: none;
+}
+
+.namesUl{
+  color: #a7a4a4;
+  font-family: 'Nerko One', cursive;
+
+}
+.font-beutify{
+  color: #707070;
+  font-family: 'Poppins', sans-serif;
+}
+
+.myBtn{
+  width: 80px;
+}
+ul:active{
+  color: #222;
+}
+.middle{
+  margin-top: 8em;
+}
+.card-icons button{
+  border-radius: 100vw;
+  border: none;
+
+}
+.card-icons i{
+  font-size: 23px;
+  color: #1d6766;
+  
+}
+
+.add_post_btn{
+  padding: 10% 15%;
+  border-radius: 100%;
+  border: none;
+  background-color:#1d6766;
+
+}
+
+.cart{
+  cursor: pointer;
+}
+.cart span:nth-child(2),.cart span:nth-child(4){
+  font-size: 15px;
+  font-weight: bold;
+  background-color: red;
+  color: #040404;
+  font-weight: bold;
+  border-radius: 100px;
+  padding: .1em .4em;
+  position: relative;
+  top: -18px;
+  left: -12px;
+}
