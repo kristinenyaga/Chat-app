@@ -388,3 +388,11 @@ p {
            */
   display: none;
 }
+
+button .fa-thumbs-up:hover {
+  color: red;
+}
+
+button.active .fa-thumbs-up {
+  color: red;
+}

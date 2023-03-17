@@ -43,8 +43,21 @@ postButton.addEventListener("click", () => {
   // }
 });
 
+const likePost = document.getElementById("like-post");
+const likes = document.getElementById("likes");
 
-setTimeout(function() {
-  console.log("hey")
+console.log("Main.js");
+likePost.addEventListener("click", (e) => {
+  console.log("Like clicked");
+  likePost.classList.toggle("active");
+  if (likePost.classList.contains("active")) {
+    likes.innerHTML = parseInt(likes.innerHTML) + 1;
+  } else {
+    likes.innerHTML = parseInt(likes.innerHTML) - 1;
+  }
+});
+
+setTimeout(function () {
+  console.log("hey");
   window.location.href = "login.html";
 }, 1000);
