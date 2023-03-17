@@ -8,8 +8,10 @@ const prisma = new PrismaClient();
 export const login = async (req: Request, res: Response) => {
   try {
     //check if the email exists, If not say it does not exist
+    console.log(req.body.email)
+    
     const userExists = await prisma.user.findUnique({
-      where: { email: req.body.email },
+      where: { email: req.body.email }
     });
     if (userExists === null) {
       return res.status(400).send("user was not found");
@@ -34,6 +36,6 @@ export const login = async (req: Request, res: Response) => {
     };
     return res.json(user);
   } catch (e: any) {
-    res.status(500).json(e);
+    res.status(500).json(e.message);
   }
 };

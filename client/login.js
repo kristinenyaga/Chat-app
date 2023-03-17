@@ -55,7 +55,7 @@ const password = document.getElementById("sign-up-password").value;
 const username = document.getElementById("sign-up-username").value;
 const email = document.getElementById("sign-up-email").value;
 const data = { password, username, email };
-alert(JSON.stringify(data));
+
 document.getElementById("signupButton").addEventListener("click", async () => {
   const res = await fetch("/auth/signup", {
     method: "POST",
@@ -66,29 +66,27 @@ document.getElementById("signupButton").addEventListener("click", async () => {
   })
     .then((res) => res.json())
     .then((data) => {
-      alert(JSON.stringify(data));
+    
       window.location.href = "#sign-in-els";
     });
 });
 
-const loginUsername=document.getElementById("loginUsername")
-const loginPassword=document.getElementById("loginPassword")
+const loginEmail=document.getElementById("loginEmail").value
+const loginPassword=document.getElementById("loginPassword").value
 
 
-document.getElementById("#loginButton").addEventListener("click",async ()=>{
+document.getElementById("loginButton").addEventListener("click",async (e)=>{
+  e.preventDefault()
     const res = await fetch("/auth/login",{
         method:'POST',
         body:JSON.stringify({
-            username:loginUsername,
+            email:loginEmail,
             password:loginPassword
         }),
         headers: {
             "Content-type": "application/json",
           }
     })
-    .then((res) => res.json())
-    .then((data) => {
-      alert(JSON.stringify(data));
-      window.location.href = "index.html";
-    });
+   const data= await res.json()
+   console.log(data)
 })
