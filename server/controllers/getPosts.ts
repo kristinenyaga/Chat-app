@@ -6,6 +6,9 @@ export const getPosts = async (req: Request, res: Response) => {
   try {
     const posts = await prisma.post.findMany({
       include: {
+        user: {
+          select: { username: true, picture: true },
+        },
         likes: {
           select: { userId: true },
           where: { userId: res.locals.requestUser.id },
@@ -15,6 +18,6 @@ export const getPosts = async (req: Request, res: Response) => {
     });
     res.json(posts);
   } catch (e: any) {
-    res.json(e.message);
+    res.status(500).json(e.message);
   }
 };

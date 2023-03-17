@@ -11,6 +11,6 @@ export const getComments = async (req: Request, res: Response) => {
     });
     res.json(comments);
   } catch (e: any) {
-    res.json(e.message);
+    res.status(500).json(e.message);
   }
 };

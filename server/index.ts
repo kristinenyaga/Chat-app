@@ -6,6 +6,8 @@ import jwt from "jsonwebtoken";
 import path from "path";
 import { routerAuth } from "./routes/auth";
 import { routerPost } from "./routes/post";
+import { routerUser } from "./routes/user";
+
 import mime from "mime"
 const prisma = new PrismaClient();
 
@@ -41,15 +43,14 @@ async function jwtVerify(req: Request, res: Response, next: NextFunction) {
 }
 
 app.use("/posts", jwtVerify);
+app.use("/users", jwtVerify);
 
 app.use("/auth", routerAuth);
 app.use("/posts", routerPost);
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client", "index.html"));
-
-//   console.log(`hey got called`);
-// });
-app.use(express.static(path.join(__dirname, '..',"client")));
+app.use("/users", routerUser);
+app.use("/media", express.static(path.join(__dirname, "media")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client", "index.html"));
 
 const PORT = process.env.PORT || 8801;
 app.listen(PORT, () => {
