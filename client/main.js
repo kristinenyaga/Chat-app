@@ -43,9 +43,22 @@ postButton.addEventListener("click", () => {
   // }
 });
 window.onload = (event) => {
-  console.log("page is fully loaded");
-  setTimeout(function() {
-    console.log("hey")
+  console.log("page is fully loaded");const likePost = document.getElementById("like-post");
+const likes = document.getElementById("likes");
+
+console.log("Main.js");
+likePost.addEventListener("click", (e) => {
+  console.log("Like clicked");
+  likePost.classList.toggle("active");
+  if (likePost.classList.contains("active")) {
+    likes.innerHTML = parseInt(likes.innerHTML) + 1;
+  } else {
+    likes.innerHTML = parseInt(likes.innerHTML) - 1;
+  }
+});
+
+  setTimeout(function () {
+    console.log("hey");
     alert("you are being redirected to login page")
     window.location.href = "login.html";
   }, 3000);
