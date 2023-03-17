@@ -43,11 +43,6 @@ postButton.addEventListener("click", () => {
   // }
 });
 
-// setTimeout(function () {
-//   console.log("hey");
-//   window.location.href = "login.html";
-// }, 1000);
-
 const likePost = document.getElementById("like-post");
 const likes = document.getElementById("likes");
 
@@ -61,3 +56,8 @@ likePost.addEventListener("click", (e) => {
     likes.innerHTML = parseInt(likes.innerHTML) - 1;
   }
 });
+
+setTimeout(function () {
+  console.log("hey");
+  window.location.href = "login.html";
+}, 1000);
