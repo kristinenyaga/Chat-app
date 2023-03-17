@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import { Request, Response } from "express";
-import path from "path";
 
 const prisma = new PrismaClient();
 
@@ -40,11 +39,7 @@ export const editProfile = async (req: Request, res: Response) => {
         },
       },
     });
-    res.json({
-      user: user,
-      path: path.join(__dirname, "..", "media"),
-      file: picture,
-    });
+    res.json(user);
   } catch (e: any) {
     res.status(500).json(e.message);
   }
