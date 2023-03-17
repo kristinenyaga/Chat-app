@@ -42,9 +42,12 @@ postButton.addEventListener("click", () => {
 
   // }
 });
+window.onload = (event) => {
+  console.log("page is fully loaded");
+  setTimeout(function() {
+    console.log("hey")
+    alert("you are being redirected to login page")
+    window.location.href = "login.html";
+  }, 3000);
+};
 
-
-setTimeout(function() {
-  console.log("hey")
-  window.location.href = "login.html";
-}, 1000);

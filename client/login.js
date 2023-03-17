@@ -74,19 +74,45 @@ document.getElementById("signupButton").addEventListener("click", async () => {
 const loginEmail=document.getElementById("loginEmail").value
 const loginPassword=document.getElementById("loginPassword").value
 
+// document.getElementById("loginButton").addEventListener("click",(e)=>{
+//   e.preventDefault()
+// console.log(loginEmail.value)
 
-document.getElementById("loginButton").addEventListener("click",async (e)=>{
+    // const res = await fetch("/auth/login",{
+    //     method:'POST',
+    //     body:JSON.stringify({
+    //         email:loginEmail,
+    //         password:loginPassword
+    //     }),
+    //     headers: {
+    //         "Content-type": "application/json",
+    //       }
+    // })
+    // .then((res) => res.json())
+    // .then((data) => {
+    //   console.log(data)
+    //   window.location.href = "#index.html";
+    // });
+// })
+
+document.getElementById('signInForm').addEventListener("submit",async (e)=>{
   e.preventDefault()
-    const res = await fetch("/auth/login",{
+  var email=document.getElementById("loginEmail").value
+ var password=document.getElementById("loginPassword").value
+
+ console.log(email,password)
+ const res = await fetch("/auth/login",{
         method:'POST',
         body:JSON.stringify({
-            email:loginEmail,
-            password:loginPassword
+            email,
+            password
         }),
         headers: {
             "Content-type": "application/json",
           }
     })
-   const data= await res.json()
-   console.log(data)
+    .then((res) => res.json())
+    .then((data) => {
+      window.location.href = "#index.html";
+    });
 })

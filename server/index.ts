@@ -51,7 +51,7 @@ app.use("/posts", routerPost);
 // });
 app.use(express.static(path.join(__dirname, '..',"client")));
 
-const PORT = process.env.PORT || 8801;
+const PORT = process.env.PORT || 8804;
 app.listen(PORT, () => {
   console.log(`app listening on http://localhost:${PORT}`);
 });
