@@ -1,3 +1,20 @@
+// Get the query string from the URL
+//window.addEventListener('load',()=>{
+ // if (!globalState.accessToken) {
+   // window.location.href = "login.html";
+  //}
+//})
+const username = localStorage.getItem('username');
+const token = localStorage.getItem('accessToken');
+
+if(!token){
+    window.location.href='login.html'
+}
+
+document.getElementById('user-name').textContent=username
+// Log the value of the "user" parameter to the console
+console.log(username);
+
 const toggleTheme = document.getElementById("toggle-theme");
 toggleTheme.addEventListener("click", (e) => {
   document.body.classList.toggle("dark");
@@ -56,6 +73,8 @@ likePost.addEventListener("click", (e) => {
     likes.innerHTML = parseInt(likes.innerHTML) - 1;
   }
 });
+if(!token){
+
 
   setTimeout(function () {
     console.log("hey");
@@ -63,4 +82,21 @@ likePost.addEventListener("click", (e) => {
     window.location.href = "login.html";
   }, 3000);
 };
+}
+const text=document.getElementById('post-comment').value
+document.getElementById('send-comment').addEventListener("click",async(e)=>{
+e.preventDefault()
+const post= await fetch("/posts/id/comments",
+{
+  method:'POST',
+  body:JSON.stringify({
+   text
+  }),
+  headers: {
+      "Content-type": "application/json",
+    }
+}
+)
+alert(`posted succesfully`)
 
+})
