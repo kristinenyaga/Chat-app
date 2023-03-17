@@ -8,19 +8,10 @@ import { routerAuth } from "./routes/auth";
 import { routerPost } from "./routes/post";
 import { routerUser } from "./routes/user";
 
-import mime from "mime"
 const prisma = new PrismaClient();
 
 dotenv.config();
 const app = express();
-const mimeTypes = {
-  css: 'text/css',
-  js: 'text/javascript'
-};
-
-// // Add the static middleware with the mimeTypes option
-
-
 app.use(cors());
 app.use(express.json());
 
@@ -49,8 +40,7 @@ app.use("/auth", routerAuth);
 app.use("/posts", routerPost);
 app.use("/users", routerUser);
 app.use("/media", express.static(path.join(__dirname, "media")));
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client", "index.html"));
+app.use("/", express.static(path.join(__dirname, "..", "client")));
 
 const PORT = process.env.PORT || 8804;
 app.listen(PORT, () => {
