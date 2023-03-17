@@ -1,0 +1,184 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    to right,
+    /* #845ec2,
+        #d65db1,
+        #ff6f91,
+        blue */ #1d6766,
+    green,
+    #babebd,
+    #8e9997
+  );
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+}
+#logo {
+  font-family: "Montserrat", sans-serif;
+  transform: rotate(45deg);
+  margin-top: 140px;
+
+  @keyframes change-box-color {
+    from {
+      background: #1d6766;
+    }
+    to {
+      background: #114389;
+    }
+  }
+}
+.green-box {
+  float: left;
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  top: 13%;
+  left: 10%;
+  border-radius: 20px;
+  background: #1d6766;
+  transform: rotate(-45deg);
+  z-index: -1;
+  transition: transform 5s;
+  animation-name: change-box-color;
+  animation-duration: 10s;
+}
+.gray-box {
+  float: left;
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  top: 30%;
+  left: 10%;
+  border-radius: 20px;
+  background: #babebd;
+  transform: rotate(45deg);
+  transition: transform 5s ease-in-out;
+  z-index: -2;
+}
+.wrapper {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  padding: 20px;
+  right: 5%;
+  top: 15%;
+  display: flex;
+  width: 30%;
+  height: 74%;
+  margin: 30 auto;
+  align-items: top;
+  justify-content: center;
+  border-radius: 30px;
+  background-color: #babebd;
+}
+body {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  /* background-image: linear-gradient(to bottom, #ffffff, #ff0000 25%, #ffff00 50%, #00ff00 75%, #0000ff); */
+}
+input {
+  width: 300px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+#sign-in {
+  float: left;
+  cursor: pointer;
+  color: #1d6766;
+  font-weight: bold;
+}
+#sign-up {
+  float: clear;
+  cursor: pointer;
+  color: #1d6766;
+}
+.control {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: transparent;
+}
+#head-section {
+  padding: 40px;
+}
+#forgot-pass-div {
+  display: none;
+}
+.control:focus {
+  border: solid transparent;
+  border-radius: 5px;
+  outline: none;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-width: 0 0 2px 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: border-width 2s cubic-bezier(0.42, 0, 0.58, 1);
+  border-image: var(--gradient);
+  border-image-slice: 1;
+}
+/* .input:focus{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #e85f83;
+} */
+.submit-btn {
+  padding: 10px;
+  margin-top: 20px;
+  width: 35%;
+  background-color: #1d6766;
+  color: white;
+  border: 1px solid#1d6766;
+  border-radius: 2em;
+}
+#sign-up-els {
+  display: none;
+  transition: 2s ease-in-out;
+}
+#sign-in-els {
+  display: block;
+  transition: 2s ease-in-out;
+  rotate: (180deg);
+}
+.forgot-pass-a {
+  margin-top: 50px;
+}
+@media (max-width: 50em) {
+  #logo {
+    margin-top: 27px;
+    margin-left: 15px;
+  }
+  .green-box {
+    width: 160px;
+    height: 160px;
+    top: 5%;
+    left: 30%;
+  }
+  .gray-box {
+    width: 160px;
+    height: 160px;
+    top: 12%;
+    left: 30%;
+  }
+  .wrapper {
+    padding: 40px;
+    right: 7.5%;
+    top: 40%;
+    display: flex;
+    width: 87%;
+    height: 55%;
+    margin: 30 auto;
+    align-items: top;
+    justify-content: center;
+    border-radius: 30px;
+  }
+}

@@ -30,7 +30,7 @@ async function jwtVerify(req: Request, res: Response, next: NextFunction) {
   } catch (e) {
     return res.status(500).json(e);
   }
-  res.status(403).json({ message: "Token is not valid" });
+  res.status(403).json("Token is not valid");
 }
 
 app.use("/posts", jwtVerify);
@@ -40,7 +40,7 @@ app.use("/auth", routerAuth);
 app.use("/posts", routerPost);
 app.use("/users", routerUser);
 app.use("/media", express.static(path.join(__dirname, "media")));
-app.use("/", express.static(path.join(__dirname, "..", "client")));
+app.use("/", express.static(path.join(__dirname, "..", "client/out")));
 
 const PORT = process.env.PORT || 8804;
 app.listen(PORT, () => {

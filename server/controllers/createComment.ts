@@ -8,12 +8,10 @@ export const createComment = async (req: Request, res: Response) => {
     const postId = parseInt(req.params.id);
     const post = await prisma.post.findUnique({ where: { id: postId } });
     if (post === null) {
-      return res
-        .status(404)
-        .json({ message: `The post id:${postId} doesn't exist` });
+      return res.status(404).json(`The post id:${postId} doesn't exist`);
     }
     if (!req.body.text) {
-      return res.status(411).json({ message: "Please provide a comment text" });
+      return res.status(411).json("Please provide a comment text");
     }
     const comment = await prisma.comment.create({
       data: {
