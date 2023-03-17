@@ -114,11 +114,12 @@ document.getElementById('signInForm').addEventListener("submit",async (e)=>{
     .then((res) => res.json())
     .then((data) => {
   
-const{username,token}=data
+const{username,token,id}=data
 globalState.accesstoken = token
 globalState.username=username
 localStorage.setItem('accessToken', token);
 localStorage.setItem('username', username);
+localStorage.setItem('id', id);
 alert(JSON.stringify(globalState))
       window.location.href = `index.html?user=${username}`;
     });
