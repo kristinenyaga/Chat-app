@@ -33,7 +33,7 @@ export default function Login() {
     }
 
     const data = { password, username, email };
-    const res = await fetch("http://localhost:8804/auth/signup", {
+    const res = await fetch("/auth/signup", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -56,7 +56,7 @@ export default function Login() {
     const email = document.getElementById("loginEmail").value;
 
     const data = { password, email };
-    const res = await fetch("http://localhost:8804/auth/login", {
+    const res = await fetch("/auth/login", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

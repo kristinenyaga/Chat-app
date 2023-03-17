@@ -12,7 +12,7 @@ export default function Home() {
     const caption = document.querySelector("#description_input").value.trim();
     const data = { title, caption };
     const user = JSON.parse(localStorage.getItem("user"));
-    const res = await fetch("http://localhost:8804/posts/create", {
+    const res = await fetch("/posts/create", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -30,7 +30,7 @@ export default function Home() {
   }
 
   const loadPosts = async (user) => {
-    const res = await fetch("http://localhost:8804/posts", {
+    const res = await fetch("/posts", {
       method: "GET",
       headers: {
         "Content-type": "application/json",

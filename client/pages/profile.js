@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
@@ -23,7 +24,7 @@ const Profile = () => {
     let formData = new FormData();
     formData.append("picture", file);
     formData.append("username", username);
-    const res = await fetch(`http://localhost:8804/users/${user.id}`, {
+    const res = await fetch(`/users/${user.id}`, {
       method: "POST",
       body: formData,
       headers: {
@@ -61,7 +62,10 @@ const Profile = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="settings" style={{ maxWidth: "400px" }}>
+      <Navbar />
+      <div
+        className="settings"
+        style={{ maxWidth: "400px", marginTop: "100px" }}>
         <div className="settingsWrapper">
           <div className="settingsTitle">
             <span className="settingsTitleUpdate">Change Your Profile</span>

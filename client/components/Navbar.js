@@ -9,7 +9,7 @@ const Navbar = () => {
       <nav id="navbar" className="navbar navbar-expand-sm fixed-top">
         <div className="container-fluid">
           <i className="fa-solid fa-paw nav_icons_color mx-3"></i>
-          <a className="navbar-brand fw-bold" href="#">
+          <a className="navbar-brand fw-bold" href="/">
             TWICHER
           </a>
           <ul className="navbar_nav nav_icons_color">

@@ -13,7 +13,7 @@ const Post = ({ post }) => {
       likes.innerHTML = parseInt(likes.innerHTML) - 1;
     }
     const user = JSON.parse(localStorage.getItem("user"));
-    const res = await fetch(`http://localhost:8804/posts/${post.id}/likes`, {
+    const res = await fetch(`/posts/${post.id}/likes`, {
       method: icon.classList.contains("active") ? "POST" : "DELETE",
       headers: {
         "Content-type": "application/json",
@@ -33,7 +33,7 @@ const Post = ({ post }) => {
     const text = document.getElementById("post-comment").value.trim();
     const data = { text };
     const user = JSON.parse(localStorage.getItem("user"));
-    const res = await fetch(`http://localhost:8804/posts/${post.id}/comments`, {
+    const res = await fetch(`/posts/${post.id}/comments`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -66,7 +66,7 @@ const Post = ({ post }) => {
               width={55}
               height={55}
               style={{ borderRadius: "60px", objectFit: "cover" }}
-              src={`http://localhost:8804${post.user.picture}`}
+              src={`${post.user.picture}`}
               alt="Profile Photo"
             />
           )}
